@@ -1,17 +1,9 @@
 <!-- Hero: CRT "HINGEAUTO" wordmark — see docs/assets/README.md for the image-gen prompt. -->
-<p align="center">
-  <img src="docs/assets/hingeauto-wordmark.png" alt="HingeAuto" width="680" />
-</p>
 
-<p align="center">
-  <strong>LLM = Love Lookin' Model.</strong><br/>
-  A stitched-vision + LLM-judge loop that drives a real Hinge install on an Android emulator — it reads each profile, judges it against <em>your</em> rubric, and skips or likes with a personalized opener.
-</p>
 
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-FF4FD8.svg"></a>
   <img alt="Python 3.10+" src="https://img.shields.io/badge/Python-3.10%2B-FF4FD8?logo=python&logoColor=white">
-  <img alt="Judge: Claude or Ollama" src="https://img.shields.io/badge/judge-Claude%20%C2%B7%20Ollama-FF4FD8">
   <img alt="Drives Android via ADB" src="https://img.shields.io/badge/emulator-Android%20%C2%B7%20ADB-FF4FD8">
   <a href="#-read-this-first"><img alt="Violates Hinge ToS — use at your own risk" src="https://img.shields.io/badge/%E2%9A%A0-violates%20Hinge%20ToS-red"></a>
 </p>
@@ -25,22 +17,13 @@
   <a href="LICENSE">License</a>
 </p>
 
-<p align="center">
-  <sub>brought to you by</sub><br/>
-  <a href="https://github.com/TerraByte-Dev"><img src="docs/assets/terrabyte-logo.png" alt="TerraByte Solutions LLC" width="84" /></a>
-</p>
 
 ---
 
-HingeAuto is what you get when you point a vision-LLM at a phone screen and let
-it date for you. An Android emulator runs a real Hinge install; this repo drives
-it over ADB, judging every profile against a rubric **you** write and acting on
-the verdict — skip, or like with a personalized opener. It runs on **Claude** out
-of the box, or completely free on a local **Ollama** model. The fun part is the
-AI engineering — stitched-frame vision plus a forced structured decision; the
-swiping is just the demo.
+**HingeBot**: A Vision-LLM that uses an Android emulator runs a real Hinge judging every profile against a rubric and deciding whether to skip, 
+or like with a tailored opener. It runs on a **Claude** model.
 
-## ⚠ Read this first
+## Read this first
 
 **This project automates Hinge, which violates Hinge's Terms of Service.**
 Real risk of account ban with no appeal. Treat this as an educational toy
@@ -62,18 +45,11 @@ for a single throwaway account, not a dating strategy.
 ## What it does
 
 Drives an Android emulator running Hinge through ADB. For each profile it
-scrolls top-to-bottom, screenshots the frames, asks Claude (or a local
-Ollama model) to judge against a user-defined rubric, and either taps Skip
+scrolls top-to-bottom, screenshots the frames, asks Claude to judge against a user-defined rubric, and either taps Skip
 or taps the heart and types a personalized opener.
 
-<p align="center">
-  <img src="docs/assets/pipeline.png" alt="The HingeAuto loop: an emulator profile → stitched screenshot frames → an LLM judge → skip or like" width="100%" />
-</p>
-<p align="center">
-  <sub><b>The loop</b> — capture a profile across ~7 frames → stitch → an LLM judges it against your rubric → <b>skip</b>, or <b>like</b> with a written opener. The interesting part is the AI engineering; the swiping is just the demo.</sub>
-</p>
 
-> ### 🤖 Tip: open this repo in Claude Code or Codex
+> ### Tip: open this repo in Claude Code or Codex
 >
 > This repo ships with [`AGENTS.md`](./AGENTS.md) (and [`CLAUDE.md`](./CLAUDE.md)).
 > If you cloned this and you're not sure where to start, open the directory
@@ -81,7 +57,7 @@ or taps the heart and types a personalized opener.
 > and say _"help me set this up."_ The agent will walk you through emulator
 > config, calibration, writing a rubric, and the first live run.
 >
-> If you'd rather do it manually, read on.
+> If you'd rather do it manually, read below.
 
 ## Quickstart
 
@@ -358,7 +334,3 @@ This is a personal project published as-is. PRs that strip more PII, fix
 calibration on additional devices, or add a real `calibrate_locations.py`
 are welcome. PRs that improve evasion of Hinge's bot-detection are not.
 
-<p align="center">
-  <a href="https://github.com/TerraByte-Dev"><img src="docs/assets/terrabyte-logo.png" alt="TerraByte Solutions LLC" width="64" /></a><br/>
-  <sub>An open-source project by <strong>TerraByte Solutions LLC</strong></sub>
-</p>
